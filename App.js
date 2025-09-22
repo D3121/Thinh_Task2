@@ -38,14 +38,15 @@ export default function App() {
       data: [
         { id: '5', name: 'Burger', price: '$10.00', image: 'https://cdn-icons-png.flaticon.com/512/878/878052.png' },
         { id: '6', name: 'Pizza', price: '$15.00', image: 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png' },
+        { id: '7', name: 'Spagheti', price: '$13.00', image: 'https://cdn-icons-png.flaticon.com/512/17673/17673050.png' },
       ],
     },
     {
       title: 'Hot Selling',
       data: [
-        { id: '5', name: 'Burger', price: '$10.00', image: 'https://cdn-icons-png.flaticon.com/512/878/878052.png' },
-        { id: '6', name: 'Pizza', price: '$15.00', image: 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png' },
-        { id: '7', name: 'Banana', price: '$2.00', image: 'https://cdn-icons-png.flaticon.com/512/2494/2494112.png' },
+        { id: '8', name: 'Burger', price: '$10.00', image: 'https://cdn-icons-png.flaticon.com/512/878/878052.png' },
+        { id: '9', name: 'Pizza', price: '$15.00', image: 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png' },
+        { id: '10', name: 'Banana', price: '$2.00', image: 'https://cdn-icons-png.flaticon.com/512/2494/2494112.png' },
       ],
     },
   ];
@@ -71,7 +72,13 @@ export default function App() {
         thumbColor={isEnabled ? '#fff' : '#ddd'} // white when enabled, gray when disabled
       />
 
-      <View style={styles.countBox}>
+      {/* Dynamic Count Box Color */}
+      <View
+        style={[
+          styles.countBox,
+          { backgroundColor: isEnabled ? '#d18b47' : '#fff' }, // Change color based on `isEnabled`
+        ]}
+      >
         <Text style={styles.countText}>Count: {count}</Text>
       </View>
 
@@ -112,10 +119,9 @@ const styles = StyleSheet.create({
   },
   countBox: {
     width: 200,
-    height: 350,
+    height: 220,
     borderWidth: 1,
     borderColor: '#000',
-    backgroundColor: '#d18b47',
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 20,
@@ -137,8 +143,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   touchableText: {
-    fontSize: 14,
+    fontSize: 20,
     textAlign: 'center',
+    width:150,
     fontFamily: 'monospace',
   },
   listContent: {
