@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   countBox: {
     width: 200,
-    height: 100,
+    height: 350,
     borderWidth: 1,
     borderColor: '#000',
     backgroundColor: '#d18b47',
